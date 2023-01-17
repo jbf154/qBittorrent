@@ -373,6 +373,7 @@ namespace BitTorrent
         void setBannedIPs(const QStringList &newList) override;
         ResumeDataStorageType resumeDataStorageType() const override;
         void setResumeDataStorageType(ResumeDataStorageType type) override;
+        QString getExternalIp() const override;
 
         bool isRestored() const override;
 

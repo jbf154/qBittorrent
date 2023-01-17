@@ -91,6 +91,7 @@ namespace
     const QString KEY_TRANSFER_UPDATA = u"up_info_data"_qs;
     const QString KEY_TRANSFER_UPRATELIMIT = u"up_rate_limit"_qs;
     const QString KEY_TRANSFER_UPSPEED = u"up_info_speed"_qs;
+    const QString KEY_TRANSER_EXTERNAL_IP = u"external_ip"_qs;
 
     // Statistics keys
     const QString KEY_TRANSFER_ALLTIME_DL = u"alltime_dl"_qs;
@@ -513,6 +514,7 @@ void SyncController::maindataAction()
     serverState[KEY_SYNC_MAINDATA_QUEUEING] = session->isQueueingSystemEnabled();
     serverState[KEY_SYNC_MAINDATA_USE_ALT_SPEED_LIMITS] = session->isAltGlobalSpeedLimitEnabled();
     serverState[KEY_SYNC_MAINDATA_REFRESH_INTERVAL] = session->refreshInterval();
+    serverState[KEY_TRANSER_EXTERNAL_IP] = session->getExternalIp();
     data[u"server_state"_qs] = serverState;
 
     const int acceptedResponseId = params()[u"rid"_qs].toInt();

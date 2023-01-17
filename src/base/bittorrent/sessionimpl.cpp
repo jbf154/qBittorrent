@@ -5622,6 +5622,11 @@ void SessionImpl::handleExternalIPAlert(const lt::external_ip_alert *p)
     }
 }
 
+QString SessionImpl::getExternalIp()
+{
+    return m_lastExternalIP;
+}
+
 void SessionImpl::handleSessionStatsAlert(const lt::session_stats_alert *p)
 {
     if (m_refreshEnqueued)
